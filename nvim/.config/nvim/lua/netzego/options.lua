@@ -52,10 +52,21 @@ vim.opt.cmdheight = 2
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
 vim.o.background = "light"
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme pepe]])
 
 -- Heighlights the cursorline
 vim.opt.cursorline = true
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = "menuone,noselect"
+vim.opt.pumheight = 16
+vim.opt.pumwidth = 16
+
+-- Foldlevel
+vim.opt.foldlevel = 3
+
+-- Modeline
+vim.opt.modeline = false
 
 -- Disable statusline in insert mode
 vim.cmd([[

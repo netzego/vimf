@@ -1,18 +1,18 @@
-local colors = require("gruvbox.colors")
+local colors = require("pepe.colors")
 require("lualine").setup({
   options = {
     icons_enabled = false,
     -- https://github.com/nvim-lualine/lualine.nvim/blob/master/lua/lualine/themes/gruvbox_light.lua
     theme = {
       normal = {
-        a = { bg = colors.light2.hex, fg = colors.green.hex },
-        b = { bg = colors.light2.hex, fg = colors.dark1.hex },
-        c = { bg = colors.light2.hex, fg = colors.dark1.hex },
+        a = { bg = colors.light2, fg = colors.green },
+        b = { bg = colors.light2, fg = colors.dark1 },
+        c = { bg = colors.light2, fg = colors.faded_red },
       },
       inactive = {
-        a = { bg = colors.light2.hex, fg = colors.dark3.hex, gui = "italic" },
-        b = { bg = colors.light2.hex, fg = colors.dark3.hex, gui = "italic" },
-        c = { bg = colors.light2.hex, fg = colors.dark3.hex, gui = "italic" },
+        a = { bg = colors.light2, fg = colors.dark3, gui = "italic" },
+        b = { bg = colors.light2, fg = colors.dark3, gui = "italic" },
+        c = { bg = colors.light2, fg = colors.dark3, gui = "italic" },
       },
     },
     component_separators = { left = "", right = "" },
@@ -23,8 +23,9 @@ require("lualine").setup({
   sections = {
     lualine_a = { "mode" },
     lualine_b = {},
-    lualine_c = { "buffers" },
-    lualine_x = { "branch" },
+    -- lualine_c = { "buffers" },
+    lualine_c = { "filename" },
+    lualine_x = {},
     lualine_y = { "progress", "location" },
     lualine_z = {},
   },
@@ -36,6 +37,13 @@ require("lualine").setup({
     lualine_y = {},
     lualine_z = {},
   },
-  tabline = {},
+  tabline = {
+    lualine_a = {},
+    lualine_b = { "buffers" },
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {}
+  },
   extensions = {},
 })

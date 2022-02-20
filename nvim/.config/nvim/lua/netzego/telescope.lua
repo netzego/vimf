@@ -4,7 +4,7 @@ require("telescope").setup({
     mappings = {
       i = {
         -- Map which_key to <C-h> (default: <C-/>)
-        ["<C-h>"] = "which_key",
+        -- ["<C-h>"] = "which_key",
         ["<C-j>"] = "move_selection_next",
         ["<C-k>"] = "move_selection_previous",
       },
@@ -18,6 +18,9 @@ require("telescope").setup({
       theme = "ivy",
     },
     registers = {
+      theme = "ivy",
+    },
+    diagnostics = {
       theme = "ivy",
     },
   },

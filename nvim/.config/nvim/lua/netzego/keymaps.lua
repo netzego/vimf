@@ -2,6 +2,7 @@
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
+local o = { silent = true, remap = true }
 
 -- Leader key
 map("", "<space>", "<nop>", opts)
@@ -20,10 +21,18 @@ map("v", "<leader>y", '"+y', opts)
 map("n", "<leader>Y", '"+y$', opts)
 map("v", "<leader>Y", '"+y$', opts)
 
+-- Greates remap ever
+-- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text
+-- xnoremap <leader>p "_dP
+map("x", "p", 'p:let @"=@0<CR>', opts)
+
 -- Buffer navigation
-map("n", "<A-[>", ":bprev<CR>", opts)
-map("n", "<A-]>", ":bnext<CR>", opts)
+map("n", "<A-h>", ":bprev<CR>", opts)
+map("n", "<A-l>", ":bnext<CR>", opts)
 map("n", "<A-w>", ":bdelete<CR>", opts)
+map("n", "<A-W>", ":bdelete!<CR>", opts)
+vim.keymap.set({ "n", "i", "v" }, "<A-[>", "<cmd>bprev<cr>", o)
+vim.keymap.set({ "n", "i", "v" }, "<A-]>", "<cmd>bnext<cr>", o)
 
 -- Line swapping
 map("n", "<A-j>", ":m .+1<CR>==", opts)
@@ -37,9 +46,11 @@ map("v", "<A-k>", ":m'<-2<CR>`>my`<mzgv`yo`z", opts)
 map("n", "<leader>e", ":Telescope find_files<CR>", opts)
 map("n", "<leader>b", ":Telescope buffers<CR>", opts)
 map("n", "<leader>r", ":Telescope registers<CR>", opts)
+map("n", "<leader>d", ":Telescope diagnostics<CR>", opts)
 
 -- Fugitive
-map("n", "<leader>g", ":G<CR>", opts)
+-- map("n", "<leader>g", ":G<CR>", opts)
+vim.keymap.set("n", "<leader>g", "<cmd>G<cr>", o)
 
 -- Lsp
 map("n", "<leader>lf", ":lua vim.lsp.buf.formating_sync()<CR>", opts)
