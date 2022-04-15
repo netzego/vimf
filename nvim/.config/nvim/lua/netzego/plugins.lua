@@ -1,30 +1,29 @@
 -- $XDG_CONFIG_HOME/.nvim/lua/plugins.lua
 -- https://github.com/wbthomason/packer.nvim#bootstrapping
 
-local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+-- local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+--
+-- if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+--   PACKER_BOOTSTRAP = vim.fn.system({
+--     "git",
+--     "clone",
+--     "--depth",
+--     "1",
+--     "https://github.com/wbthomason/packer.nvim",
+--     install_path,
+--   })
+-- end
 
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = vim.fn.system({
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  })
-end
+-- vim.cmd [[packadd packer.nvim]]
+--
+-- vim.cmd([[
+--   augroup Packer
+--     autocmd!
+--     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+--   augroup end
+-- ]])
 
-vim.cmd([[
-  augroup Packer
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
-
-require("packer").startup(function()
-  -- Register use, so lsp is alright
-  local use = require("packer").use
-
+require("packer").startup(function(use)
   -- Helpers
   use("nvim-lua/plenary.nvim")
 
@@ -41,7 +40,7 @@ require("packer").startup(function()
 
   -- Treesitter
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-  use("nvim-treesitter/nvim-treesitter-textobjects")
+  use({ "nvim-treesitter/nvim-treesitter-textobjects" })
 
   -- Telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
