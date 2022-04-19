@@ -14,7 +14,7 @@ null_ls.setup({
     -- null_ls.builtins.completion.spell,
     -- Python
     null_ls.builtins.formatting.black.with({
-      extra_args = { "--fast", "--traget-version", "py310" },
+      extra_args = { "--fast", "--target-version", "py310" },
     }),
     -- null_ls.builtins.formatting.isort,
     -- null_ls.builtins.diagnostics.eslint,
@@ -28,4 +28,16 @@ null_ls.setup({
       extra_args = { "-t", "2" },
     }),
   },
+  -- https://github.com/jose-elias-alvarez/null-ls.nvim#how-do-i-format-files-on-save
+  -- you can reuse a shared lspconfig on_attach callback here
+  on_attach = function(client)
+    if client.resolved_capabilities.document_formatting then
+      vim.cmd([[
+            augroup LspFormatting
+                autocmd! * <buffer>
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+            augroup END
+            ]])
+    end
+  end,
 })

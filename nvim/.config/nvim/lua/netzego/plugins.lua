@@ -29,7 +29,8 @@ require("packer").startup(function(use)
 
   -- Colorscheme
   use({ "rktjmp/lush.nvim" })
-  -- use({ "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } })
+  use({ "netzego/gruvbox.nvim" })
+  -- use({ "ellisonleao/gruvbox.nvim" })
 
   -- Comments
   use({ "numToStr/Comment.nvim" })
@@ -44,10 +45,7 @@ require("packer").startup(function(use)
 
   -- Telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-  use({
-    "nvim-telescope/telescope.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
-  })
+  use({ "nvim-telescope/telescope.nvim" })
 
   -- Statusline
   use("nvim-lualine/lualine.nvim")
@@ -75,9 +73,11 @@ require("packer").startup(function(use)
   -- use({ "HallerPatrick/py_lsp.nvim" })
 
   -- Filetypes and syntax
-  use("ixru/nvim-markdown")
 
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
+  -- https://github.com/ixru/nvim-markdown
+  -- use("ixru/nvim-markdown")
+
+  -- if PACKER_BOOTSTRAP then
+  --   require("packer").sync()
+  -- end
 end)
