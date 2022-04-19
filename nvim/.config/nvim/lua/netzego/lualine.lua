@@ -1,4 +1,4 @@
-local colors = require("pepe.colors")
+local colors = require("gruvbox.colors")
 require("lualine").setup({
   options = {
     icons_enabled = false,
@@ -26,8 +26,8 @@ require("lualine").setup({
     -- lualine_c = { "buffers" },
     lualine_c = { "filename" },
     lualine_x = {},
-    lualine_y = { "progress", "location" },
-    lualine_z = {},
+    lualine_y = { "branch" },
+    lualine_z = { "progress", "location" },
   },
   inactive_sections = {
     lualine_a = {},
@@ -43,7 +43,7 @@ require("lualine").setup({
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = {}
+    lualine_z = {},
   },
   extensions = {},
 })

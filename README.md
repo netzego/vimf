@@ -12,5 +12,7 @@ My personal neovim configure files.
 - smnuneko (lua)
 - clangd (ansi c)
 
-
 ## Keybindings
+
+- Leaderkey `;`
+- <space> is used for most keymaps where usally <leader> is used.

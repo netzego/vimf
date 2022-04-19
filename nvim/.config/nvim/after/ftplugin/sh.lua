@@ -1,14 +1,8 @@
--- c.lua
+-- sh.lua
 vim.bo.expandtab = true
 vim.bo.shiftwidth = 4
 vim.bo.softtabstop = 4
 vim.bo.tabstop = 4
-
--- vim.cmd([[
--- 	augroup AutoformatC
--- 		autocmd BufWritePre *.c :lua vim.lsp.buf.formatting_sync()
--- 	augroup END
--- ]])
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }

@@ -5,25 +5,25 @@ local opts = { noremap = true, silent = true }
 local o = { silent = true, remap = true }
 
 -- Leader key
-map("", "<space>", "<nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+map("", ";", "<nop>", opts)
+vim.g.mapleader = ";"
+vim.g.maplocalleader = ";"
 
 -- Clipboard registers
 -- The `plus` register is the `xclip -o -selection primary` (XA_PRIMARY)
 -- The `star` register is the `xclip -o -selection clipboard` (XA_CLIPBOARD)
-map("n", "<leader>p", '"+p', opts)
-map("v", "<leader>p", '"+p', opts)
-map("n", "<leader>P", '"+P', opts)
-map("v", "<leader>P", '"+P', opts)
-map("n", "<leader>y", '"+y', opts)
-map("v", "<leader>y", '"+y', opts)
-map("n", "<leader>Y", '"+y$', opts)
-map("v", "<leader>Y", '"+y$', opts)
+map("n", "<space>p", '"+p', opts)
+map("v", "<space>p", '"+p', opts)
+map("n", "<space>P", '"+P', opts)
+map("v", "<space>P", '"+P', opts)
+map("n", "<space>y", '"+y', opts)
+map("v", "<space>y", '"+y', opts)
+map("n", "<space>Y", '"+y$', opts)
+map("v", "<space>Y", '"+y$', opts)
 
 -- Greates remap ever
 -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text
--- xnoremap <leader>p "_dP
+-- xnoremap <space>p "_dP
 map("x", "p", 'p:let @"=@0<CR>', opts)
 
 -- Buffer navigation
@@ -43,14 +43,14 @@ map("v", "<A-j>", ":m'>+<CR>`<my`>mzgv`yo`z", opts)
 map("v", "<A-k>", ":m'<-2<CR>`>my`<mzgv`yo`z", opts)
 
 -- Telescope
-map("n", "<leader>e", ":Telescope find_files<CR>", opts)
-map("n", "<leader>b", ":Telescope buffers<CR>", opts)
-map("n", "<leader>r", ":Telescope registers<CR>", opts)
-map("n", "<leader>d", ":Telescope diagnostics<CR>", opts)
+map("n", "<space>e", ":Telescope find_files<CR>", opts)
+map("n", "<space>b", ":Telescope buffers<CR>", opts)
+map("n", "<space>r", ":Telescope registers<CR>", opts)
+map("n", "<space>d", ":Telescope diagnostics<CR>", opts)
 
 -- Fugitive
--- map("n", "<leader>g", ":G<CR>", opts)
-vim.keymap.set("n", "<leader>g", "<cmd>G<cr>", o)
+-- map("n", "<space>g", ":G<CR>", opts)
+vim.keymap.set("n", "<space>g", "<cmd>G<cr>", o)
 
 -- Lsp
-map("n", "<leader>lf", ":lua vim.lsp.buf.formating_sync()<CR>", opts)
+map("n", "<space>lf", ":lua vim.lsp.buf.formating_sync()<CR>", opts)
