@@ -1,75 +1,75 @@
--- lua/config/options.lua
+-- lua/netzego/options.lua
 
---Set highlight on search
+-- Set highlight on search
 vim.o.hlsearch = false
 
 -- To ALWAYS use the clipboard for ALL operations (instead of interacting with
 -- the '+' and/or '*' registers explicitly): >
 -- vim.opt.clipboard = "unnamedplus"
 
---Switching buffers without saving
+-- Switching buffers without saving
 vim.g.hidden = true
 
---Set highlight on search
+-- Set highlight on search
 vim.o.hlsearch = false
 
---Make line numbers default
+-- Make line numbers default
 vim.wo.number = true
 vim.wo.numberwidth = 4
 vim.wo.relativenumber = true
 
---Enable mouse mode
+-- Enable mouse mode
 vim.o.mouse = "a"
 
---Enable break indent
+-- Enable break indent
 vim.o.breakindent = true
 
---Save undo history
+-- Save undo history
 vim.opt.undofile = true
 
---Case insensitive searching UNLESS /C or capital in search
+-- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
---Decrease update time
--- vim.o.updatetime = 250
+-- Decrease update time
+--  vim.o.updatetime = 250
 
--- Foldmethod
+--  Foldmethod
 vim.opt.foldmethod = "indent"
 
--- Always show the signcolumn
+--  Always show the signcolumn
 vim.wo.signcolumn = "yes:1"
 
--- Don't show mode in cmdline
+--  Don't show mode in cmdline
 vim.opt.showmode = false
 
---Number of line to keep above and below the cursor
+-- Number of line to keep above and below the cursor
 vim.g.scrolloff = 8
 
---Number of lines for the command-line
+-- Number of lines for the command-line
 vim.opt.cmdheight = 2
 
---Set colorscheme (order is important here)
+-- Set colorscheme (order is important here)
 vim.o.termguicolors = true
 vim.o.background = "light"
--- vim.cmd([[colorscheme pepe]])
+--  vim.cmd([[colorscheme pepe]])
 vim.cmd([[colorscheme gruvbox]])
 
--- Heighlights the cursorline
+--  Heighlights the cursorline
 vim.opt.cursorline = true
 
--- Set completeopt to have a better completion experience
+--  Set completeopt to have a better completion experience
 vim.o.completeopt = "menuone,noselect"
 vim.opt.pumheight = 16
 vim.opt.pumwidth = 16
 
--- Foldlevel
+--  Foldlevel
 vim.opt.foldlevel = 3
 
--- Modeline
+--  Modeline
 vim.opt.modeline = false
 
--- Disable statusline in insert mode
+--  Disable statusline in insert mode
 vim.cmd([[
   augroup NoCursorlineInInsertMode
     au!

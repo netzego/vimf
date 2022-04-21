@@ -16,17 +16,21 @@ null_ls.setup({
     null_ls.builtins.formatting.black.with({
       extra_args = { "--fast", "--target-version", "py310" },
     }),
+    -- null_ls.builtins.diagnostics.pyproject_flake8,
     -- null_ls.builtins.formatting.isort,
     -- null_ls.builtins.diagnostics.eslint,
     -- Html
     null_ls.builtins.formatting.prettierd.with({
-      filetypes = { "html", "json", "markdown", "yaml", "javascript", "typescript" },
+      filetypes = { "html", "json", "yaml", "javascript", "typescript" },
     }),
     -- Djangohtml and alikes, only supports indentation
     null_ls.builtins.formatting.djhtml.with({
       filetypes = { "htmldjango" },
       extra_args = { "-t", "2" },
     }),
+    -- TOML
+    -- https://taplo.tamasfe.dev/cli/#features
+    null_ls.builtins.formatting.taplo,
   },
   -- https://github.com/jose-elias-alvarez/null-ls.nvim#how-do-i-format-files-on-save
   -- you can reuse a shared lspconfig on_attach callback here
