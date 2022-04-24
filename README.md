@@ -1,4 +1,4 @@
-My personal neovim configure files.
+My personal neovim configure files. Always WIP.
 
 ## Plugins
 
