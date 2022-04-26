@@ -1,1 +1,1 @@
-My personal neovim configure files. Always WIP.
+My personal [neovim](https://neovim.io/) configure files. Always WIP.
