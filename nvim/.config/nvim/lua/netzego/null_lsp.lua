@@ -11,6 +11,8 @@ null_ls.setup({
         return utils.root_has_file({ "stylua.toml", ".stylua.toml" })
       end,
     }),
+    -- Rust
+    null_ls.builtins.formatting.rustfmt,
     -- Spelling
     -- null_ls.builtins.completion.spell,
     -- Python
