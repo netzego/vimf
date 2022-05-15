@@ -48,6 +48,7 @@ map("n", "<space>b", ":Telescope buffers<CR>", opts)
 map("n", "<space>r", ":Telescope registers<CR>", opts)
 map("n", "<space>d", ":Telescope diagnostics<CR>", opts)
 map("n", "<space>te", ":Telescope symbols<CR>", opts)
+map("n", "<space>tg", ":lua require'telescope.builtin'.symbols{ sources = {'gitmoji'} }", opts)
 
 -- Fugitive
 -- map("n", "<space>g", ":G<CR>", opts)
