@@ -56,3 +56,16 @@ vim.keymap.set("n", "<space>g", "<cmd>G<cr>", o)
 
 -- Lsp
 map("n", "<space>lf", ":lua vim.lsp.buf.formating_sync()<CR>", opts)
+
+-- Spell toggle function
+-- TODO Move me to a nice place
+vim.api.nvim_create_user_command("ToggleSpell", function()
+  if vim.wo.spell then
+    vim.wo.spell = false
+  else
+    vim.wo.spell = true
+  end
+end, {})
+
+-- Spell
+vim.keymap.set({ "n" }, "<f1>", ":ToggleSpell<CR>", o)
