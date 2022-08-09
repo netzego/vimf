@@ -24,16 +24,26 @@ null_ls.setup({
     -- null_ls.builtins.diagnostics.eslint,
     -- Html
     null_ls.builtins.formatting.prettierd.with({
-      filetypes = { "html", "json", "yaml", "javascript", "typescript" },
+      filetypes = { "json", "yaml", "javascript", "typescript" },
     }),
     -- Djangohtml and alikes, only supports indentation
+    -- null_ls.builtins.formatting.djhtml.with({
+    --   filetypes = { "htmldjango" },
+    --   extra_args = { "-t", "2" },
+    -- }),
+    -- HTML
+    null_ls.builtins.diagnostics.djlint,
     null_ls.builtins.formatting.djhtml.with({
-      filetypes = { "htmldjango" },
-      extra_args = { "-t", "2" },
+      extra_args = { "--tabwidth", "2" },
     }),
     -- TOML
     -- https://taplo.tamasfe.dev/cli/#features
     null_ls.builtins.formatting.taplo,
+    -- SCSS
+    -- null_ls.builtins.formatting.stylelint,
+    -- SH, BASH
+    null_ls.builtins.formatting.shfmt,
+    null_ls.builtins.code_actions.shellcheck,
   },
   -- https://github.com/jose-elias-alvarez/null-ls.nvim#how-do-i-format-files-on-save
   -- you can reuse a shared lspconfig on_attach callback here
