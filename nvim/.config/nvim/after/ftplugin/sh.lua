@@ -4,8 +4,9 @@ vim.bo.shiftwidth = 4
 vim.bo.softtabstop = 4
 vim.bo.tabstop = 4
 
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+local bats_opts = "--verbose-run --show-output-of-passing-tests"
 
-map("n", "<leader>m", ":!sh %<CR>", opts)
--- map("n", "<leader>i", ":terminal python -i %<CR>i", opts)
+vim.keymap.set("n", "<space>m", "<cmd>!bash %<cr>", { silent = true, buffer = true })
+vim.keymap.set("n", "<space>M", "<cmd>terminal bash ./%<cr>i", { silent = true, buffer = true })
+vim.keymap.set("n", "<space>t", "<cmd>!bats " .. bats_opts .. " %<cr>", { silent = true, buffer = true })
+vim.keymap.set("n", "<space>s", "<cmd>!shellcheck %<cr>", { silent = true, buffer = true })

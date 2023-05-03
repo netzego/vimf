@@ -68,8 +68,23 @@ require("packer").startup(function(use)
   -- use("hrsh7th/cmp-path")
   -- use("hrsh7th/cmp-cmdline")
 
-  -- TODO
   -- surrounds
+  -- https://github.com/kylechui/nvim-surround
+  use({
+    "kylechui/nvim-surround",
+    -- tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end,
+  })
+
+  -- Webdevel
+  use("mattn/emmet-vim")
+
+  -- Go lang
+  -- use("fatih/vim-go")
 
   -- use({ "HallerPatrick/py_lsp.nvim" })
 

@@ -1,8 +1,5 @@
 -- lua/netzego/options.lua
 
--- Set highlight on search
-vim.o.hlsearch = false
-
 -- To ALWAYS use the clipboard for ALL operations (instead of interacting with
 -- the '+' and/or '*' registers explicitly): >
 -- vim.opt.clipboard = "unnamedplus"
@@ -67,7 +64,14 @@ vim.opt.pumwidth = 16
 vim.opt.foldlevel = 3
 
 --  Modeline
-vim.opt.modeline = false
+vim.opt.modeline = true
+
+-- listchars
+vim.opt.listchars:append({ eol = "↵" })
+vim.opt.listchars:append({ tab = "»»" })
+vim.opt.listchars:append({ trail = "·" })
+vim.opt.listchars:append({ space = "·" })
+vim.opt.list = false
 
 --  Disable statusline in insert mode
 vim.cmd([[
