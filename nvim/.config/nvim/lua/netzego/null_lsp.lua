@@ -15,16 +15,18 @@ null_ls.setup({
     null_ls.builtins.formatting.rustfmt,
     -- Spelling
     -- null_ls.builtins.completion.spell,
-    -- Python
-    null_ls.builtins.formatting.black.with({
-      extra_args = { "--fast", "--target-version", "py310" },
-    }),
-    null_ls.builtins.formatting.isort,
+    -- PYTHON
+    -- null_ls.builtins.formatting.black.with({
+    --   extra_args = { "--preview", "--target-version", "py310" },
+    -- }),
+    -- null_ls.builtins.formatting.isort,
+    null_ls.builtins.diagnostics.ruff,
+    null_ls.builtins.formatting.ruff,
     -- null_ls.builtins.diagnostics.pyproject_flake8,
     -- null_ls.builtins.diagnostics.eslint,
     -- Html
     null_ls.builtins.formatting.prettierd.with({
-      filetypes = { "json", "yaml", "javascript", "typescript" },
+      filetypes = { "html", "json", "javascript", "typescript", "css", "scss" },
     }),
     -- Djangohtml and alikes, only supports indentation
     -- null_ls.builtins.formatting.djhtml.with({
@@ -40,10 +42,17 @@ null_ls.setup({
     -- https://taplo.tamasfe.dev/cli/#features
     null_ls.builtins.formatting.taplo,
     -- SCSS
+    -- null_ls.builtins.diagnostics.stylelint, -- sucks
     -- null_ls.builtins.formatting.stylelint,
     -- SH, BASH
     null_ls.builtins.formatting.shfmt,
-    null_ls.builtins.code_actions.shellcheck,
+    null_ls.builtins.diagnostics.shellcheck,
+    -- null_ls.builtins.code_actions.shellcheck,
+    -- ANSIBLE
+    null_ls.builtins.diagnostics.ansiblelint,
+    -- YAML
+    null_ls.builtins.formatting.yamlfmt,
+    null_ls.builtins.diagnostics.yamllint,
   },
   -- https://github.com/jose-elias-alvarez/null-ls.nvim#how-do-i-format-files-on-save
   -- you can reuse a shared lspconfig on_attach callback here

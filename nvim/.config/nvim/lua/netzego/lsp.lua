@@ -2,7 +2,7 @@
 -- require("lspconfig")["<YOUR_LSP_SERVER>"].setup({
 --   capabilities = capabilities,
 -- })
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -57,7 +57,7 @@ local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-require("lspconfig").sumneko_lua.setup({
+require("lspconfig").lua_ls.setup({
   capabilities = capabilities,
   -- Disable autoformat
   on_attach = function(client, buf)
