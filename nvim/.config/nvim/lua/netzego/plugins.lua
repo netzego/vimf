@@ -14,7 +14,7 @@
 --   })
 -- end
 
--- vim.cmd [[packadd packer.nvim]]
+vim.cmd [[packadd packer.nvim]]
 --
 -- vim.cmd([[
 --   augroup Packer
@@ -24,6 +24,9 @@
 -- ]])
 
 require("packer").startup(function(use)
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+
   -- Helpers
   use("nvim-lua/plenary.nvim")
 
