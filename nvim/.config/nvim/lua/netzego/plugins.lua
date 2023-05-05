@@ -14,7 +14,11 @@
 --   })
 -- end
 
+<<<<<<< HEAD
 vim.cmd [[packadd packer.nvim]]
+=======
+vim.cmd([[packadd packer.nvim]])
+>>>>>>> 3c5823c (wip: feat!: rm packer from repo; use aur pkg)
 --
 -- vim.cmd([[
 --   augroup Packer
@@ -25,7 +29,11 @@ vim.cmd [[packadd packer.nvim]]
 
 require("packer").startup(function(use)
   -- Packer can manage itself
+<<<<<<< HEAD
   use 'wbthomason/packer.nvim'
+=======
+  use("wbthomason/packer.nvim")
+>>>>>>> 3c5823c (wip: feat!: rm packer from repo; use aur pkg)
 
   -- Helpers
   use("nvim-lua/plenary.nvim")
