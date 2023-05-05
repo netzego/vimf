@@ -49,8 +49,6 @@ vim.opt.cmdheight = 2
 -- Set colorscheme (order is important here)
 vim.o.termguicolors = true
 vim.o.background = "light"
---  vim.cmd([[colorscheme pepe]])
-vim.cmd([[colorscheme gruvbox]])
 
 --  Heighlights the cursorline
 vim.opt.cursorline = true

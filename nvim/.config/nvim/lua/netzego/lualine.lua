@@ -1,4 +1,5 @@
-local colors = require("gruvbox.colors")
+local colors = require("gruvbox.palette").colors
+
 require("lualine").setup({
   options = {
     icons_enabled = false,

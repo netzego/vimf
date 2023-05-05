@@ -39,9 +39,9 @@ require("packer").startup(function(use)
   use("nvim-lua/plenary.nvim")
 
   -- Colorscheme
-  use({ "rktjmp/lush.nvim" })
-  use({ "netzego/gruvbox.nvim" })
-  -- use({ "ellisonleao/gruvbox.nvim" })
+  -- use({ "rktjmp/lush.nvim" })
+  -- use({ "netzego/gruvbox.nvim" })
+  use({ "ellisonleao/gruvbox.nvim" })
 
   -- Comments
   use({ "numToStr/Comment.nvim" })
