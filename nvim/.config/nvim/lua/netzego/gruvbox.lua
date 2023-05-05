@@ -1,22 +1,34 @@
 -- lua/config/gruvbox.lua
 -- https://github.com/ellisonleao/gruvbox.nvim
--- https://github.com/rktjmp/lush.nvim
-vim.g.gruvbox_invert_selection = false
-vim.g.gruvbox_italic = false
-vim.g.gruvbox_italicize_comments = false
-vim.g.gruvbox_invert_tabline = false
+require("gruvbox").setup({
+  undercurl = true,
+  underline = true,
+  bold = true,
+  italic = {
+    strings = true,
+    comments = true,
+    operators = false,
+    folds = true,
+  },
+  strikethrough = true,
+  invert_selection = false,
+  invert_signs = false,
+  invert_tabline = false,
+  invert_intend_guides = false,
+  inverse = true, -- invert background for search, diffs, statuslines and errors
+  contrast = "hard", -- can be "hard", "soft" or empty string
+  palette_overrides = {
+    light0_hard = "#eaf4d7",
+    light0 = "#e2f1c7",
+    light0_soft = "#d1e5bc",
+    light1 = "#c9dbb2",
+    light2 = "#9bbea1",
+    light3 = "#8eae93",
+    light4 = "#789284",
+  },
+  overrides = {},
+  dim_inactive = false,
+  transparent_mode = false,
+})
 
-local hi = function(group, map)
-  local cmd = ":hi " .. group
-  for k, v in pairs(map) do
-    if v ~= nil then
-      cmd = cmd .. " " .. k .. "=" .. v
-    end
-  end
-  vim.cmd(cmd)
-end
-
-local c = require("gruvbox.colors")
-
-hi("Comment", { gui = "NONE" })
-hi("Folded", { guibg = c.bg0, gui = "italic" })
+vim.cmd("colorscheme gruvbox")
