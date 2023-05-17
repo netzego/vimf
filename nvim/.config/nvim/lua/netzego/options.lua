@@ -15,6 +15,12 @@ vim.wo.number = true
 vim.wo.numberwidth = 4
 vim.wo.relativenumber = true
 
+-- Tabulator defaults
+vim.bo.expandtab = true
+vim.bo.shiftwidth = 4
+vim.bo.softtabstop = 4
+vim.bo.tabstop = 4
+
 -- Enable mouse mode
 vim.o.mouse = "a"
 
