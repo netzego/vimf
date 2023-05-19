@@ -12,7 +12,7 @@ null_ls.setup({
       end,
     }),
     -- clang
-    null_ls.builtins.formatting.clang_format,
+    -- null_ls.builtins.formatting.clang_format,
     -- Rust
     null_ls.builtins.formatting.rustfmt,
     -- Spelling
