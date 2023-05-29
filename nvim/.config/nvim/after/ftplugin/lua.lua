@@ -4,6 +4,8 @@ vim.bo.shiftwidth = 2
 vim.bo.softtabstop = 2
 vim.bo.tabstop = 2
 
+vim.cmd([[ autocmd BufWritePre *.lua lua vim.lsp.buf.format({ async = false })]])
+
 vim.keymap.set("n", "<space>m", "<cmd>!lua %<cr>", { silent = true, buffer = true })
 vim.keymap.set("n", "<space>M", "<cmd>terminal lua -i %<cr>i", { silent = true, buffer = true })
 vim.keymap.set("n", "<space>j", "<cmd>!luajit %<cr>", { silent = true, buffer = true })
