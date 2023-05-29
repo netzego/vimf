@@ -59,10 +59,10 @@ vim.o.background = "light"
 --  Heighlights the cursorline
 vim.opt.cursorline = true
 
---  Set completeopt to have a better completion experience
-vim.o.completeopt = "menuone,noselect"
-vim.opt.pumheight = 16
-vim.opt.pumwidth = 16
+-- Set completeopt to have a better completion experience
+vim.g.completeopt = "menuone,noselect,noinsert"
+vim.g.pumheight = 16
+vim.g.pumwidth = 16
 
 --  Foldlevel
 vim.opt.foldlevel = 3
