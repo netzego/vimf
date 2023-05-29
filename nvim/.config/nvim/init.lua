@@ -6,6 +6,7 @@ require("netzego/plugins")
 -- Plugins
 require("netzego/gruvbox")
 require("netzego/lualine")
+require("netzego/lspmaps")
 require("netzego/lsp")
 require("netzego/cmp")
 require("netzego/null_ls")

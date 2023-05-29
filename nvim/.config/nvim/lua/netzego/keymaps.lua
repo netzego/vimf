@@ -1,4 +1,4 @@
--- lua/config/keymaps.lua
+-- lua/netzego/keymaps.lua
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
@@ -8,6 +8,9 @@ local o = { silent = true, remap = true }
 map("", ";", "<nop>", opts)
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
+
+-- -- Overload K mapping to open keywordprg in fullscreen
+-- map("n", "K", "<cmd>vim.g.keywordprg expand(cword)<CR>", opts)
 
 -- Clipboard registers
 -- The `plus` register is the `xclip -o -selection primary` (XA_PRIMARY)

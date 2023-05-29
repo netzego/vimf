@@ -1,4 +1,5 @@
--- Setup nvim-cmp.
+-- cmp.lua
+
 local cmp = require("cmp")
 
 cmp.setup({
@@ -37,7 +38,7 @@ cmp.setup({
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
-    { name = "snippy", max_item_count = 4 },
+    { name = "snippy",  max_item_count = 4 },
     -- { name = "buffer", keyword_length = 5 },
   },
   -- experimental = {
@@ -52,7 +53,7 @@ cmp.setup({
 --     { name = "buffer" },
 --   },
 -- })
---
+
 -- -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 -- cmp.setup.cmdline(":", {
 --   sources = cmp.config.sources({
@@ -61,3 +62,14 @@ cmp.setup({
 --     { name = "cmdline" },
 --   }),
 -- })
+
+-- set langu
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+local servers = { "lua_ls", "pyright", "rust_analyzer", "tsserver", "clangd" }
+for _, lsp in pairs(servers) do
+  require("lspconfig")[lsp].setup({
+    capabilities = capabilities,
+  })
+end
