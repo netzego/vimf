@@ -14,7 +14,7 @@
 --   })
 -- end
 
-vim.cmd [[packadd packer.nvim]]
+vim.cmd([[packadd packer.nvim]])
 --
 -- vim.cmd([[
 --   augroup Packer
