@@ -6,11 +6,11 @@ null_ls.setup({
   sources = {
     -- Lua
     -- https://github.com/sumneko/lua-language-server/commit/0f63b39275be9c5c3eb3bca27f5bd660cdc0ae26
-    null_ls.builtins.formatting.stylua.with({
-      condition = function(utils)
-        return utils.root_has_file({ "stylua.toml", ".stylua.toml" })
-      end,
-    }),
+    -- null_ls.builtins.formatting.stylua.with({
+    --   condition = function(utils)
+    --     return utils.root_has_file({ "stylua.toml", ".stylua.toml" })
+    --   end,
+    -- }),
     -- clang
     -- null_ls.builtins.formatting.clang_format,
     -- Rust
