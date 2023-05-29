@@ -16,7 +16,7 @@ require("gruvbox").setup({
   invert_tabline = false,
   invert_intend_guides = false,
   inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "", -- can be "hard", "soft" or empty string
+  contrast = "",  -- can be "hard", "soft" or empty string
   palette_overrides = {
     light0_hard = "#eaf4d7",
     light0 = "#e2f1c7",
@@ -26,7 +26,9 @@ require("gruvbox").setup({
     light3 = "#8eae93",
     light4 = "#789284",
   },
-  overrides = {},
+  overrides = {
+    -- CursorLine = { bg = "" }
+  },
   dim_inactive = false,
   transparent_mode = false,
 })
