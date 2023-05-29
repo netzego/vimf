@@ -31,8 +31,6 @@ require("packer").startup(function(use)
   use("nvim-lua/plenary.nvim")
 
   -- Colorscheme
-  -- use({ "rktjmp/lush.nvim" })
-  -- use({ "netzego/gruvbox.nvim" })
   use({ "ellisonleao/gruvbox.nvim" })
 
   -- Comments
@@ -56,7 +54,10 @@ require("packer").startup(function(use)
 
   -- Git
   use("tpope/vim-fugitive")
-  use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
+  use({
+    "lewis6991/gitsigns.nvim",
+    requires = { "nvim-lua/plenary.nvim" }
+  })
 
   -- Snippets
   use("dcampos/nvim-snippy")
@@ -83,18 +84,8 @@ require("packer").startup(function(use)
     end,
   })
 
-  -- Webdevel
+  -- emmet
   use("mattn/emmet-vim")
-
-  -- Go lang
-  -- use("fatih/vim-go")
-
-  -- use({ "HallerPatrick/py_lsp.nvim" })
-
-  -- Filetypes and syntax
-
-  -- https://github.com/ixru/nvim-markdown
-  -- use("ixru/nvim-markdown")
 
   -- if PACKER_BOOTSTRAP then
   --   require("packer").sync()
