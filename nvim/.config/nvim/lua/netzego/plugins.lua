@@ -1,30 +1,10 @@
--- $XDG_CONFIG_HOME/.nvim/lua/plugins.lua
+-- lua/netzego/plugins.lua
 -- https://github.com/wbthomason/packer.nvim#bootstrapping
 
--- local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
---
--- if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
---   PACKER_BOOTSTRAP = vim.fn.system({
---     "git",
---     "clone",
---     "--depth",
---     "1",
---     "https://github.com/wbthomason/packer.nvim",
---     install_path,
---   })
--- end
-
 vim.cmd([[packadd packer.nvim]])
---
--- vim.cmd([[
---   augroup Packer
---     autocmd!
---     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
---   augroup end
--- ]])
 
 require("packer").startup(function(use)
-  -- Packer can manage itself
+  -- packer itself
   use("wbthomason/packer.nvim")
 
   -- Helpers
@@ -86,8 +66,4 @@ require("packer").startup(function(use)
 
   -- emmet
   use("mattn/emmet-vim")
-
-  -- if PACKER_BOOTSTRAP then
-  --   require("packer").sync()
-  -- end
 end)
