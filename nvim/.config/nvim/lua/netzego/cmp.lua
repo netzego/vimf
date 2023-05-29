@@ -63,8 +63,7 @@ cmp.setup({
 --   }),
 -- })
 
--- set langu
-
+-- set lsp servers
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local servers = { "lua_ls", "pyright", "rust_analyzer", "tsserver", "clangd" }
