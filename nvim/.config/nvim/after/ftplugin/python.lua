@@ -3,6 +3,7 @@ vim.bo.expandtab = true
 vim.bo.shiftwidth = 4
 vim.bo.softtabstop = 4
 vim.bo.tabstop = 4
+vim.bo.keywordprg = "/usr/bin/pydoc"
 
 vim.keymap.set("n", "<space>m", "<cmd>!python %<cr>", { silent = true, buffer = true })
 vim.keymap.set("n", "<space>M", "<cmd>terminal python -i %<cr>i", { silent = true, buffer = true })
