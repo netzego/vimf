@@ -58,6 +58,7 @@ vim.o.background = "light"
 
 --  Heighlights the cursorline
 vim.opt.cursorline = true
+vim.opt.cursorlineopt = "both"
 
 -- Set completeopt to have a better completion experience
 vim.g.completeopt = "menuone,noselect,noinsert"
