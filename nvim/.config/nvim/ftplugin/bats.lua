@@ -1,4 +1,5 @@
 -- bats.lua
+vim.opt_local.commentstring = "# %s"
 vim.opt_local.makeprg = "/usr/bin/bats %"
 
 local efm = "# %f: line %l: %m"
