@@ -22,7 +22,7 @@ vim.bo.softtabstop = 4
 vim.bo.tabstop = 4
 
 -- Enable mouse mode
-vim.o.mouse = "a"
+vim.o.mouse = false
 
 -- Enable break indent
 vim.o.breakindent = true
