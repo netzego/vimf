@@ -66,4 +66,7 @@ require("packer").startup(function(use)
 
   -- emmet
   use("mattn/emmet-vim")
+
+  -- diagon
+  use("willchao612/vim-diagon")
 end)
