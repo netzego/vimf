@@ -87,10 +87,10 @@ vim.keymap.set({ "n" }, "<f7>", ":ToggleVirtualText<CR>", o)
 
 -- Toggle list chars
 vim.api.nvim_create_user_command("ToggleListChars", function()
-  if vim.opt.list then
-    vim.opt.list = false
+  if vim.o.list ~= true then
+    vim.o.list = true
   else
-    vim.opt.list = true
+    vim.o.list = false
   end
 end, {})
 
