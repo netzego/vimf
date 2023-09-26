@@ -1,4 +1,4 @@
-local colors = require("gruvbox.palette").colors
+local colors = require("gruvbox.palette").get_base_colors({}, "light")
 
 require("lualine").setup({
   options = {
@@ -6,14 +6,14 @@ require("lualine").setup({
     -- https://github.com/nvim-lualine/lualine.nvim/blob/master/lua/lualine/themes/gruvbox_light.lua
     theme = {
       normal = {
-        a = { bg = colors.light2, fg = colors.green },
-        b = { bg = colors.light2, fg = colors.dark1 },
-        c = { bg = colors.light2, fg = colors.faded_red },
+        a = { bg = colors.bg2, fg = colors.green },
+        b = { bg = colors.bg2, fg = colors.dark1 },
+        c = { bg = colors.bg2, fg = colors.faded_red },
       },
       inactive = {
-        a = { bg = colors.light2, fg = colors.dark3, gui = "italic" },
-        b = { bg = colors.light2, fg = colors.dark3, gui = "italic" },
-        c = { bg = colors.light2, fg = colors.dark3, gui = "italic" },
+        a = { bg = colors.bg2, fg = colors.dark3, gui = "italic" },
+        b = { bg = colors.bg2, fg = colors.dark3, gui = "italic" },
+        c = { bg = colors.bg2, fg = colors.dark3, gui = "italic" },
       },
     },
     component_separators = { left = "", right = "" },
