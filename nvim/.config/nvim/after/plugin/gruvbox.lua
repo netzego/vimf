@@ -12,12 +12,7 @@ local overrides = {
   light4 = "#789284",
 }
 
--- merge tweaks with palette
-local cols = vim.tbl_extend(
-  "keep",
-  overrides,
-  require("gruvbox/palette").colors
-)
+local cols = require("gruvbox/palette").get_base_colors(overrides, "light")
 
 require("gruvbox").setup({
   undercurl = true,
