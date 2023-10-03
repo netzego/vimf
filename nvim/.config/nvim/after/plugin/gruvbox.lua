@@ -12,8 +12,6 @@ local overrides = {
   light4 = "#789284",
 }
 
-local cols = require("gruvbox/palette").get_base_colors(overrides, "light")
-
 require("gruvbox").setup({
   undercurl = true,
   underline = true,
@@ -33,7 +31,7 @@ require("gruvbox").setup({
   contrast = "",   -- can be "hard", "soft" or empty string
   palette_overrides = overrides,
   overrides = {
-    QuickFixLine = { fg = cols.dark0, bg = cols.light1, bold = false },
+    QuickFixLine = { fg = overrides.dark0, bg = overrides.light1, bold = false },
   },
   dim_inactive = false,
   transparent_mode = false,
