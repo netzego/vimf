@@ -1,6 +1,8 @@
 -- init.lua
----@diagnostic disable:discard-returns
-require("netzego/settings")
-require("netzego/keymaps")
+require("netzego/options")
+require("netzego/lazy")
 require("netzego/plugins")
-require("netzego/diagnostic")
+require("netzego/keymaps")
+-- require("netzego/keymaps")
+-- require("netzego/plugins")
+-- require("netzego/diagnostic")
