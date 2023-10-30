@@ -1,11 +1,31 @@
 -- lua/netzego/keymaps.lua
 
+-- help: map.txt
+
+-- nvim_set_keymap({mode}, {lhs}, {rhs}, {*opts})
+--
+-- • {mode}  	Mode short-name (map command prefix: "n", "i", "v", "x", …) or
+-- 		"!" for |:map!|, or empty string for |:map|. "ia", "ca" or
+-- 		"!a" for abbreviation in Insert mode, Cmdline mode, or both,
+-- 		respectively
+-- • {lhs}	Left-hand-side |{lhs}| of the mapping.
+-- • {rhs}	Right-hand-side |{rhs}| of the mapping.
+-- • {opts}	Optional parameters map: Accepts all |:map-arguments| as keys
+-- 		except |<buffer>|, values are booleans (default false). Also:
+-- 		• "noremap" disables |recursive_mapping|, like |:noremap|
+-- 		• "desc" human-readable description.
+-- 		• "callback" Lua function called in place of {rhs}.
+-- 		• "replace_keycodes" (boolean) When "expr" is true, replace
+--   		keycodes in the resulting string (see
+--   		|nvim_replace_termcodes()|). Returning nil from the Lua
+--   		"callback" is equivalent to returning an empty string.
+
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 local o = { silent = true, remap = true }
 
 -- Leader key
-map("", ";", "<nop>", opts)
+map("n", ";", "<nop>", {})
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 

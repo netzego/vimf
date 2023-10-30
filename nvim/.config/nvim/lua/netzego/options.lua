@@ -2,6 +2,7 @@
 
 vim.g.netrw_liststyle = 3
 
+
 -- To ALWAYS use the clipboard for ALL operations (instead of interacting with
 -- the '+' and/or '*' registers explicitly)
 vim.opt.clipboard = "unnamedplus"
