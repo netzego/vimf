@@ -1,4 +1,3 @@
--- lua/plugins/cmp.lua
 -- https://github.com/hrsh7th/nvim-cmp
 
 return {
@@ -6,10 +5,10 @@ return {
   event = "InsertEnter",
   lazy = true,
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-nvim-lua",
     "dcampos/cmp-snippy",
     "honza/vim-snippets",
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-nvim-lua",
   },
   opts = function()
     local cmp = require("cmp")
@@ -19,13 +18,14 @@ return {
       },
       snippet = {
         expand = function(args)
-          require('snippy').expand_snippet(args.body)
+          require("snippy").expand_snippet(args.body)
         end,
       },
       sources = {
-        { name = "nvim_lsp" },
-        { name = "nvim_lua" },
-        { name = "snippy" },
+        -- order matters
+        { name = "nvim_lsp", },
+        { name = "nvim_lua", },
+        { name = "snippy", },
       },
       mapping = {
         ["<C-Space>"] = cmp.mapping.complete(),
@@ -36,7 +36,7 @@ return {
         ["<CR>"] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Replace,
           select = true,
-        })
+        }),
       },
     }
   end,

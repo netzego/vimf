@@ -1,11 +1,10 @@
+-- https://github.com/nvim-telescope/telescope.nvim
+
 return {
-  'nvim-telescope/telescope.nvim',
+  "nvim-telescope/telescope.nvim",
   dependencies = {
-    'nvim-lua/plenary.nvim',
-    {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-    }
+    "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope-fzf-native.nvim",
   },
   opts = function()
     return {
@@ -13,7 +12,7 @@ return {
       -- see https://github.com/nvim-telescope/telescope.nvim/issues/848
       defaults = vim.tbl_deep_extend(
         "force",
-        require('telescope.themes').get_ivy(), -- or get_cursor, get_ivy
+        require("telescope.themes").get_ivy(), -- or get_cursor, get_ivy
         {
           -- your own `default` options go here, e.g.:
           preview = false,

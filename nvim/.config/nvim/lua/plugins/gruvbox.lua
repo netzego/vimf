@@ -1,4 +1,3 @@
--- lua/plugins/gruvbox.lua
 -- https://github.com/ellisonleao/gruvbox.nvim
 
 local overrides = {
@@ -36,7 +35,7 @@ return {
       contrast = "",  -- can be "hard", "soft" or empty string
       palette_overrides = overrides,
       overrides = {
-        QuickFixLine = { fg = overrides.dark0, bg = overrides.light1, bold = false },
+        QuickFixLine = { fg = overrides.dark0, bg = overrides.light1, bold = false, },
       },
       dim_inactive = false,
       transparent_mode = false,
