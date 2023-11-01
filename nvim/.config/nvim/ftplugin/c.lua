@@ -7,6 +7,7 @@ vim.bo.shiftwidth  = tw
 vim.bo.softtabstop = tw
 vim.bo.tabstop     = tw
 vim.bo.expandtab   = true
+-- avoid lsp overloading the `K` keymap to `vim.lsp.buf.hover()`
 vim.bo.keywordprg  = ":Man"
 
 vim.api.nvim_create_autocmd({ "BufWritePre", }, {
