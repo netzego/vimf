@@ -3,7 +3,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "python", },
+    ensure_installed = { "c", "lua", "vim", "vimdoc", "bash", "python", },
     textobjects = {
       select = {
         enable = true,
