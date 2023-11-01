@@ -1,13 +1,12 @@
 -- lua/netzego/options.lua
 
-vim.g.netrw_liststyle = 3
+vim.g.netrw_liststyle = 6
 
+-- To ALWAYS use the clipboard for ALL operations
+-- (instead of interacting with the '+' and/or '*' registers explicitly)
+-- vim.opt.clipboard = "unnamedplus"
 
--- To ALWAYS use the clipboard for ALL operations (instead of interacting with
--- the '+' and/or '*' registers explicitly)
-vim.opt.clipboard = "unnamedplus"
-
--- Switching buffers without saving
+-- switching buffers without saving
 vim.g.hidden = true
 
 -- Set highlight on search
@@ -24,7 +23,7 @@ vim.bo.shiftwidth = 4
 vim.bo.softtabstop = 4
 vim.bo.tabstop = 4
 
--- Enable mouse mode
+-- disable mouse mode
 vim.o.mouse = ""
 
 -- Enable break indent
@@ -69,23 +68,14 @@ vim.g.pumheight = 16
 vim.g.pumwidth = 16
 
 --  Foldlevel
-vim.opt.foldlevel = 3
+vim.opt.foldlevel = 8
 
 --  Modeline
 vim.opt.modeline = true
 
 -- listchars
 vim.opt.listchars:append({ eol = "↵" })
-vim.opt.listchars:append({ tab = "»»" })
+vim.opt.listchars:append({ tab = " »" })
 vim.opt.listchars:append({ trail = "·" })
 vim.opt.listchars:append({ space = "·" })
 vim.opt.list = false
-
---  Disable cursorline in insert mode
-vim.cmd([[
-  augroup NoCursorlineInInsertMode
-    au!
-    au InsertEnter * :lua vim.opt.cursorline = false
-    au InsertLeave * :lua vim.opt.cursorline = true
-  augroup END
-]])
