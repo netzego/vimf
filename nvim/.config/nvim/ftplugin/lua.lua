@@ -1,12 +1,12 @@
 -- ftplugin/lua.lua
 
-local tw = 4
-local keymap_opts = { silent = true, buffer = true }
+local tw           = 2
+local keymap_opts  = { silent = true, buffer = true }
 
-vim.bo.shiftwidth = tw
+vim.bo.shiftwidth  = tw
 vim.bo.softtabstop = tw
-vim.bo.tabstop = tw
-vim.bo.expandtab = true
+vim.bo.tabstop     = tw
+vim.bo.expandtab   = true
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = { "*.lua" },
