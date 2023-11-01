@@ -19,3 +19,5 @@ vim.keymap.set("n", "<space>m", "<cmd>!lua %<cr>", keymap_opts)
 vim.keymap.set("n", "<space>M", "<cmd>terminal lua -i %<cr>i", keymap_opts)
 vim.keymap.set("n", "<space>j", "<cmd>!luajit %<cr>", keymap_opts)
 vim.keymap.set("n", "<space>J", "<cmd>terminal luajit -i %<cr>i", keymap_opts)
+-- execute the current buffer as nvim lua script
+vim.keymap.set("n", "<space>v", "<cmd>lua dofile(vim.fn.expand('%'))<cr>", keymap_opts)
