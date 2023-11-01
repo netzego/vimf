@@ -1,1 +1,0 @@
-/usr/share/nvim/runtime/syntax/bash.vim
