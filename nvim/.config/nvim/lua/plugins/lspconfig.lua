@@ -27,15 +27,6 @@ return {
     "folke/neodev.nvim",
   },
   init = function()
-    -- disable overriting the `K` keymap
-    -- https://neovim.io/doc/user/lsp.html#lsp-defaults-disable
-    vim.api.nvim_create_autocmd("LspAttach", {
-      callback = function(ev)
-        -- vim.bo[ev.buf].formatexpr = nil
-        -- vim.bo[ev.buf].omnifunc = nil
-        vim.keymap.del("n", "K", { buffer = ev.buf, })
-      end,
-    })
     -- Use LspAttach autocommand to only map the following keys after the language server attaches to the current buffer
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
