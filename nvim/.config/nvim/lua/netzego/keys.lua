@@ -38,12 +38,12 @@ map("v", "<A-j>", ":m'>+<CR>`<my`>mzgv`yo`z", opts)
 map("v", "<A-k>", ":m'<-2<CR>`>my`<mzgv`yo`z", opts)
 
 -- Telescope
-map("n", "<space>e", ":Telescope find_files<CR>", opts)
-map("n", "<space>b", ":Telescope buffers<CR>", opts)
-map("n", "<space>r", ":Telescope registers<CR>", opts)
-map("n", "<space>d", ":Telescope diagnostics<CR>", opts)
-map("n", "<space>te", ":Telescope symbols<CR>", opts)
-map("n", "<space>tg", ":lua require'telescope.builtin'.symbols{ sources = {'gitmoji'} }", opts)
+map("n", "<leader>e", ":Telescope find_files<CR>", opts)
+map("n", "<leader>b", ":Telescope buffers<CR>", opts)
+map("n", "<leader>r", ":Telescope registers<CR>", opts)
+map("n", "<leader>d", ":Telescope diagnostics<CR>", opts)
+map("n", "<leader>te", ":Telescope symbols<CR>", opts)
+map("n", "<leader>tg", ":lua require'telescope.builtin'.symbols{ sources = {'gitmoji'} }", opts)
 
 -- Fugitive
 -- map("n", "<space>g", ":G<CR>", opts)
