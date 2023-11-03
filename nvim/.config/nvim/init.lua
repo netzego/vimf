@@ -2,10 +2,9 @@
 
 -- set leader before lazy plugin
 -- this is must/should be done before loading lazy keymaps
-vim.api.nvim_set_keymap("n", ";", "<nop>", {})
--- vim.api.nvim_set_keymap("n", "\\", "<nop>", {})
-vim.g.mapleader = ";"
-vim.g.maplocalleader = ";"
+vim.api.nvim_set_keymap("n", " ", "<nop>", {})
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 require("netzego/lazy")
 require("netzego/opts")
