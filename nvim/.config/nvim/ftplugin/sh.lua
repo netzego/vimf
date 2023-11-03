@@ -7,7 +7,7 @@ vim.bo.shiftwidth  = tw
 vim.bo.softtabstop = tw
 vim.bo.tabstop     = tw
 vim.bo.expandtab   = true
--- vim.bo.keywordprg  = "man -s" -- FIXME
+vim.bo.keywordprg  = ":Man" -- FIXME
 
 vim.api.nvim_create_autocmd({ "BufWritePre", }, {
   pattern = { "*.sh", "*.bash", },
