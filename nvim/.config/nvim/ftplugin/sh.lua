@@ -10,7 +10,7 @@ vim.bo.expandtab   = true
 vim.bo.keywordprg  = ":Man" -- FIXME
 
 vim.api.nvim_create_autocmd({ "BufWritePre", }, {
-  pattern = { "*.sh", "*.bash", },
+  pattern = { "*.sh", "*.bash", "*.bats", },
   callback = function(_)
     vim.lsp.buf.format({ async = false, })
   end,
