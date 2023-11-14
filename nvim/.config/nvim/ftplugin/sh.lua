@@ -16,4 +16,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre", }, {
   end,
 })
 
-vim.keymap.set("n", "<space>m", "<cmd>!bash ./%<cr>", keymap_opts)
+vim.keymap.set("n", "<leader>m", "<cmd>!bash %<cr>", keymap_opts)
+vim.keymap.set("n", "<leader>t", "<cmd>!bats %<cr>", keymap_opts)
+vim.keymap.set("n", "<leader>c", "<cmd>!shellcheck %<cr>", keymap_opts)
