@@ -1,4 +1,5 @@
 -- https://github.com/nvimtools/none-ls.nvim
+-- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md
 
 return {
   "nvimtools/none-ls.nvim",
