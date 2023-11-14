@@ -8,8 +8,12 @@ return {
     return {
       sources = {
         -- bash
-        null_ls.builtins.diagnostics.shellcheck, -- diagnostics
-        null_ls.builtins.formatting.shfmt,       -- formatting
+        null_ls.builtins.diagnostics.shellcheck.with({
+          extra_filetypes = { "bats", },
+        }),
+        null_ls.builtins.formatting.shfmt.with({
+          extra_filetypes = { "bats", },
+        }),
         -- c99
         null_ls.builtins.formatting.clang_format,
       },
