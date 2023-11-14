@@ -1,5 +1,9 @@
+extends bash
+
+priority 1000
+
 snippet #!
-	#!/usr/bin/bats
+	#!/usr/bin/env bats
 snippet @
 	@test "${1:desc}" {
 		: # Not Implemented
