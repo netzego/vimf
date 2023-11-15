@@ -15,6 +15,7 @@ return {
   lazy = false,    -- make sure we load this during startup if it is your main colorscheme
   priority = 1312, -- make sure to load this before all the other start plugins
   config = function()
+    local palette = require("gruvbox").palette
     local opts = {
       undercurl = false,
       underline = false,
@@ -35,7 +36,9 @@ return {
       contrast = "",  -- can be "hard", "soft" or empty string
       palette_overrides = overrides,
       overrides = {
-        QuickFixLine = { fg = overrides.dark0, bg = overrides.light1, bold = false, },
+        QuickFixLine         = { fg = overrides.light2, bg = palette.dark0, bold = false, },
+        StatusLine           = { fg = overrides.light2, bg = palette.dark0, bold = false, },
+        StatusLineNC         = { fg = overrides.light2, bg = palette.dark3, bold = false, italic = true, },
       },
       dim_inactive = false,
       transparent_mode = false,
