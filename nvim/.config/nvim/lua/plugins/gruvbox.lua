@@ -16,8 +16,8 @@ return {
   priority = 1312, -- make sure to load this before all the other start plugins
   config = function()
     local opts = {
-      undercurl = true,
-      underline = true,
+      undercurl = false,
+      underline = false,
       bold = true,
       italic = {
         comments = true,
