@@ -38,7 +38,7 @@ map("v", "<A-j>", ":m'>+<CR>`<my`>mzgv`yo`z", opts)
 map("v", "<A-k>", ":m'<-2<CR>`>my`<mzgv`yo`z", opts)
 
 -- Telescope
-map("n", "<leader>e", ":Telescope find_files<CR>", opts)
+map("n", "<leader>e", ":Telescope find_files hidden=true no_ignore=true<CR>", opts)
 map("n", "<leader>b", ":Telescope buffers<CR>", opts)
 map("n", "<leader>r", ":Telescope registers<CR>", opts)
 map("n", "<leader>d", ":Telescope diagnostics<CR>", opts)
