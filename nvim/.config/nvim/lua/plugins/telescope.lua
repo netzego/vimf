@@ -24,6 +24,9 @@ return {
               ["<C-k>"] = "move_selection_previous",
             },
           },
+          file_ignore_patterns = {
+            ".git",
+          },
         }
       ),
       extensions = {
