@@ -8,7 +8,10 @@ return {
 
     configs.setup(
       {
-        ensure_installed = { "c", "lua", "vim", "vimdoc", "markdown", "bash", "python", },
+        ensure_installed = { "c", "lua", "vim", "vimdoc", "markdown", "markdown_inline", "bash", "python", },
+        highlight = {
+          enable = true,
+        },
         textobjects = {
           select = {
             enable = true,
