@@ -4,14 +4,17 @@
 
 return {
   "nvimtools/none-ls.nvim",
+  dependencies = {
+    "gbprod/none-ls-shellcheck.nvim",
+  },
   opts = function()
     local null_ls = require("null-ls")
     return {
       sources = {
-        -- bash
-        null_ls.builtins.diagnostics.shellcheck.with({
-          extra_filetypes = { "bats", },
-        }),
+        -- shellcheck
+        require("none-ls-shellcheck.diagnostics"),
+        require("none-ls-shellcheck.code_actions"),
+        -- bats
         null_ls.builtins.formatting.shfmt.with({
           extra_filetypes = { "bats", },
         }),
