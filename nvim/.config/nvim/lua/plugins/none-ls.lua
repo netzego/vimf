@@ -1,5 +1,6 @@
 -- https://github.com/nvimtools/none-ls.nvim
 -- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md
+-- https://github.com/gbprod/none-ls-shellcheck.nvim
 
 return {
   "nvimtools/none-ls.nvim",
