@@ -16,6 +16,7 @@ return {
         require("none-ls-shellcheck.code_actions"),
         -- shfmt
         null_ls.builtins.formatting.shfmt.with({
+          extra_args = { "--keep-padding", "--func-next-line", },
           extra_filetypes = { "bats", },
         }),
         -- c99
