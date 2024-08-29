@@ -14,7 +14,7 @@ return {
         -- shellcheck
         require("none-ls-shellcheck.diagnostics"),
         require("none-ls-shellcheck.code_actions"),
-        -- bats
+        -- shfmt
         null_ls.builtins.formatting.shfmt.with({
           extra_filetypes = { "bats", },
         }),
