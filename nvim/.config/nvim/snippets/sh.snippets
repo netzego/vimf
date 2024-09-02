@@ -1,14 +1,14 @@
 snippet #!
-  #!/bin/bash
-snippet :#
-  : # Not Implemented
+  #!/usr/bin/env bash
 snippet strict
   set -o errexit
   set -o nounset
   set -o pipefail
+  set -o xtrace
 
-  # IFS=$'\n\t'
-
+  ${0}
+snippet ifs
+  # IFS=$' \n\t'
   ${0}
 snippet sc
   # shellcheck disable=SC${1:0000}
@@ -20,3 +20,5 @@ snippet func
   ${3:func_name}() {
     ${0::}
   }
+snippet :#
+  : # Not Implemented
