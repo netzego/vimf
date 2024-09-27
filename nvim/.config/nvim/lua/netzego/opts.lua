@@ -60,6 +60,12 @@ vim.o.cmdheight = 2
 vim.o.termguicolors = true
 vim.o.background = "light"
 
+vim.cmd([[hi Normal guibg=None]])
+vim.cmd([[hi StatusLine guibg=NvimLightGrey1]])
+vim.cmd([[hi StatusLineNC guibg=NvimLightGrey1]])
+vim.cmd([[hi CursorLine guibg=NvimLightGrey1]])
+vim.cmd([[hi TelescopeSelection guibg=NvimLightGrey1]])
+
 -- heighlights the cursorline
 vim.o.cursorline = true
 vim.o.cursorlineopt = "both"
