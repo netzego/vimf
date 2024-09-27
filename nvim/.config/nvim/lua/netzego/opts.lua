@@ -81,3 +81,6 @@ vim.opt.listchars:append({ tab = " »", })
 vim.opt.listchars:append({ trail = "·", })
 vim.opt.listchars:append({ space = "·", })
 vim.o.list = false
+
+-- virtualtext
+vim.diagnostic.config({ virtual_text = false, })
