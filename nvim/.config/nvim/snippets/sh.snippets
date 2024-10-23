@@ -20,5 +20,7 @@ snippet func
   ${3:func_name}() {
     ${0::}
   }
+snippet scriptname
+	declare -gr SCRIPTNAME="$(realpath "${BASH_ARGV0}")"
 snippet :#
   : # Not Implemented
