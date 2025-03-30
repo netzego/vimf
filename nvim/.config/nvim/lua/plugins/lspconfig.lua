@@ -17,6 +17,7 @@ local langservs = {
   },
   clangd = {},
   pyright = {},
+  yamlls = {},
 }
 
 return {
