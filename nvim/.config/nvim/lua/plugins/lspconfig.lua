@@ -63,7 +63,7 @@ return {
     local capabilities = require("cmp_nvim_lsp").default_capabilities(client_capabilities)
 
     for srv, settings in pairs(langservs) do
-      require("lspconfig")[srv].setup({
+      vim.lsp.config("*", {
         capabilities = capabilities,
         settings = settings,
       })
