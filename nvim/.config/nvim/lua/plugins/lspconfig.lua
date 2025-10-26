@@ -16,7 +16,31 @@ local langservs = {
     },
   },
   clangd = {},
-  pyright = {},
+  -- pyright = {
+  --   -- https://docs.astral.sh/ruff/editors/setup/#neovim
+  --   settings = {
+  --     pyright = {
+  --       -- Using Ruff's import organizer
+  --       disableOrganizeImports = true,
+  --     },
+  --     python = {
+  --       analysis = {
+  --         -- Ignore all files for analysis to exclusively use Ruff for linting
+  --         ignore = { "*", },
+  --       },
+  --     },
+  --   },
+  -- },
+  ruff = {
+    -- https://docs.astral.sh/ruff/editors/setup/#neovim
+    init_options = {
+      settings = {
+        -- Ruff language server settings go here
+      },
+    },
+  },
+  jdtls = {},
+  tflint = {},
   yamlls = {},
   gopls = {},
 }
@@ -66,6 +90,7 @@ return {
       vim.lsp.config("*", {
         capabilities = capabilities,
         settings = settings,
+        root_markers = { ".git", },
       })
     end
   end,
