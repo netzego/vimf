@@ -63,10 +63,11 @@ vim.o.background = "light"
 -- Tweak default colorscheme
 vim.cmd([[
   hi Normal guibg=None
-  hi StatusLine guibg=NvimLightGrey1
-  hi StatusLineNC guibg=NvimLightGrey1
+  hi StatusLine guibg=NvimLightGrey2 guifg=NvimLightGrey4
+  hi StatusLineNC guibg=NvimLightGrey2
   hi CursorLine guibg=NvimLightGrey1
   hi TelescopeSelection guibg=NvimLightGrey1
+  hi Folded guifg=NvimLightGrey3 guibg=None gui=italic
 ]])
 
 -- heighlights the cursorline
@@ -85,8 +86,9 @@ vim.o.foldlevel = 8
 vim.o.modeline = true
 
 -- listchars
-vim.opt.listchars:append({ eol = "↵", })
-vim.opt.listchars:append({ tab = " »", })
+-- vim.opt.listchars:append({ eol = "↵", })
+vim.opt.listchars:append({ tab = "| ", })
+vim.opt.listchars:append({ leadmultispace = "|   ", })
 vim.opt.listchars:append({ trail = "·", })
 vim.opt.listchars:append({ space = "·", })
 vim.o.list = false

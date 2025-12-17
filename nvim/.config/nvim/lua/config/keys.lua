@@ -21,7 +21,7 @@
 --   		"callback" is equivalent to returning an empty string.
 
 local map = vim.keymap.set
-local opts = { noremap = true, silent = true }
+local opts = { noremap = true, silent = true, }
 
 -- greates remap ever
 -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text
@@ -38,7 +38,7 @@ map("v", "<A-j>", ":m'>+<CR>`<my`>mzgv`yo`z", opts)
 map("v", "<A-k>", ":m'<-2<CR>`>my`<mzgv`yo`z", opts)
 
 -- Telescope
-map("n", "<leader>e", ":Telescope find_files hidden=true no_ignore=true<CR>", opts)
+map("n", "<leader>e", ":Telescope find_files hidden=true<CR>", opts)
 map("n", "<leader>b", ":Telescope buffers<CR>", opts)
 map("n", "<leader>r", ":Telescope registers<CR>", opts)
 map("n", "<leader>d", ":Telescope diagnostics<CR>", opts)
