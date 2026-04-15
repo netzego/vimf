@@ -1,21 +1,43 @@
--- ftplugin/sh.lua
-
+-- after/ftplugin/sh.lua
 local tw           = 4
-local keymap_opts  = { silent = true, buffer = true, }
+local map          = vim.keymap.set
+local opts         = { silent = true, buffer = true, }
 
 vim.bo.shiftwidth  = tw
 vim.bo.softtabstop = tw
 vim.bo.tabstop     = tw
 vim.bo.expandtab   = true
-vim.bo.keywordprg  = ":Man" -- FIXME, BUG
+vim.bo.keywordprg  = ":Man"
 
-vim.api.nvim_create_autocmd({ "BufWritePre", }, {
-  pattern = { "*.sh", "*.bash", "*.bats", },
-  callback = function(_)
-    vim.lsp.buf.format({ async = false, })
-  end,
-})
+map({ "n", }, "<leader>c", "<cmd>!shellcheck -f gcc %<cr>", opts)
+map({ "n", }, "<leader>m", "<cmd>!bash %<cr>", opts)
+-- map("n", "<space>M", "<cmd>terminal lua -i %<cr>i", opts)
+-- map("n", "<space>j", "<cmd>!luajit %<cr>", opts)
+-- map("n", "<space>J", "<cmd>terminal luajit -i %<cr>i", opts)
 
-vim.keymap.set("n", "<leader>m", "<cmd>!bash %<cr>", keymap_opts)
-vim.keymap.set("n", "<leader>t", "<cmd>!bats %<cr>", keymap_opts)
-vim.keymap.set("n", "<leader>c", "<cmd>!shellcheck %<cr>", keymap_opts)
+-- treesitter syntax hl
+-- vim.treesitter.start() -- 2026-04-15 do not work, yet?
+
+-- nvim-lint shellsheck
+require("lint")
+if vim.fn.executable("shellsheck") then
+  vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", }, {
+    callback = function()
+      require("lint").try_lint("shellcheck")
+    end,
+  })
+end
+
+if vim.fn.executable("shftm") then
+  -- configure shfmt (conform)
+  require("conform").formatters.shfmt = {
+    append_args = { "-i", tw, },
+  }
+  -- autocmd shfmt (conform)
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.sh",
+    callback = function(args)
+      require("conform").format({ bufnr = args.buf, })
+    end,
+  })
+end
