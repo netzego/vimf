@@ -1,6 +1,5 @@
+# https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/lua.template.editorconfig
 [*.lua]
-# see https://github.com/CppCXY/EmmyLuaCodeStyle
-# [basic]
 
 indent_style = space
 indent_size = 2
